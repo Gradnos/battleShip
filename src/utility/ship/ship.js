@@ -6,8 +6,10 @@ export class Ship{
         this.orientation = orientation;
         
         this.hp = size;
-        this.exploded = false;
+        this.isSunk = false;
     }
+
+
 
     #setHp(n){
         this.hp = n;
@@ -20,6 +22,6 @@ export class Ship{
     }
 
     #explode(){
-        this.exploded = true;
+        this.isSunk = true;
     }
 }

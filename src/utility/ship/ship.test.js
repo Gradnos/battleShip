@@ -37,13 +37,13 @@ test('correct hp 0', () => {
 test('explodes correctly', () => {
   ship = new Ship(1,1,2,3);
   ship.hit()
-  expect(ship.exploded).toBe(true);
+  expect(ship.isSunk).toBe(true);
 });
 
 test('doesnt explode wrongly', () => {
   ship = new Ship(2,1,2,3);
   ship.hit()
-  expect(ship.exploded).toBe(false);
+  expect(ship.isSunk).toBe(false);
 });
 
 
