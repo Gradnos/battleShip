@@ -9,18 +9,17 @@ export class Ship{
         this.exploded = false;
     }
 
-    setHp(n){
+    #setHp(n){
         this.hp = n;
-        if(n<1) this.explode();
+        if(n<1) this.#explode();
     }
-
 
     hit(){
         if(this.hp < 1) return;
-        this.setHp(this.hp-1);
+        this.#setHp(this.hp-1);
     }
 
-    explode(){
+    #explode(){
         this.exploded = true;
     }
 }
