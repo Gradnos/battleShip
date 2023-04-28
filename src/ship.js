@@ -1,26 +1,26 @@
-export const shipFactory = (size, x, y, orientation) =>{
-    let hp = size;
-    let exploded = false;
-    const hit = () =>{
-        hp--;
-        if(hp < 1) explode();
-        console.log(hp);
-    };
+export class Ship{
+    constructor(size, x, y, orientation){
+        this.size = size;
+        this.x = x;
+        this.y = y;
+        this.orientation = orientation;
+        
+        this.hp = size;
+        this.exploded = false;
+    }
 
-    const explode = () =>{
-        exploded = true;
-    };
-    
-    const isExploded = () =>{
-        return exploded;
-    };
+    setHp(n){
+        this.hp = n;
+        if(n<1) this.explode();
+    }
 
-    return{
-        size,
-        x,
-        y,
-        isExploded,
-        orientation,
-        hit,
-    };
-};
+
+    hit(){
+        if(this.hp < 1) return;
+        this.setHp(this.hp-1);
+    }
+
+    explode(){
+        this.exploded = true;
+    }
+}
